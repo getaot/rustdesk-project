@@ -8,7 +8,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          ref: '1.4.9'
+          ref: '1.4.6'
           fetch-depth: 0 # 关键：获取所有历史标签
           submodules: 'recursive' # 同步子模块
           
