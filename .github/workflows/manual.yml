@@ -1,19 +1,6 @@
-name: Manual Rollback
-on: workflow_dispatch
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
+- name: Checkout Code
         uses: actions/checkout@v4
         with:
-          ref: '1.4.6'
-          fetch-depth: 0 # 关键：获取所有历史标签
-          submodules: 'recursive' # 同步子模块
-          
-      # 只是为了验证是否成功切到 1.4.9，可以加一步打印版本
-      - name: Verify Version
-        run: |
-          git log -1
-          cat Cargo.toml | grep version
+          ref: 'refs/tags/1.4.6'
+          fetch-depth: 0
+          submodules: 'recursive'
